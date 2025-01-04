@@ -8,6 +8,8 @@ Try to add drag and drop somewhere.
 5. Implement the edit note function in the 
 6. Add a search functionality that allows user to search for notes by the text present inside the notes
 7. Make the application reactive
+add shad cn
+give users multiple ways to view the notes (list, grid etc)
 
 
 Todo today:

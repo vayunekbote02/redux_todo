@@ -4,7 +4,12 @@ import { setCategory } from "../features/categorySlice";
 const Sidebar = () => {
   const dispatch = useDispatch();
   const selectedCategory = useSelector((state) => state.category.category);
-  const totalNoteCount = useSelector((state) => state.notes.length);
+  const totalNoteCount = useSelector(
+    (state) =>
+      state.notes.filter(
+        (note) => note.cat === selectedCategory || selectedCategory === "all"
+      ).length
+  );
 
   const handleCategoryChange = (category) => {
     dispatch(setCategory(category));
@@ -18,10 +23,10 @@ const Sidebar = () => {
           alt="Logo"
           className="w-12 h-12 mb-2 rounded-full"
         />
-        <h1 className="text-xl font-bold">Categorical Todo</h1>
+        <h1 className="text-xl font-bold">Categories</h1>
       </div>
       <div className="flex justify-center mt-4 text-2xl text-white bg-stone-500">
-        {totalNoteCount} Notes
+        {totalNoteCount} {totalNoteCount === 1 ? "Note" : "Notes"}
       </div>
       <div className="flex flex-col gap-4 mt-4 ml-4 text-xl">
         <label className="flex items-baseline cursor-pointer">

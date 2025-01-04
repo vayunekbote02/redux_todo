@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { ConfirmationModal } from "./ConfirmationModal";
 import { useState } from "react";
 import { Link } from "react-router";
+import { clipTitle } from "../common_functions";
 
 export const NoteCard = ({ title, content, id }) => {
   const dispatch = useDispatch();
@@ -14,14 +15,6 @@ export const NoteCard = ({ title, content, id }) => {
     setModalOpen(false);
   };
 
-  const clipTitle = (title, forPurpose) => {
-    if (forPurpose === "modal") {
-      return title.length > 10
-        ? "'" + title.substring(0, 10) + "..." + "'"
-        : "'" + title + "'";
-    }
-    return title.length > 30 ? title.substring(0, 30) + "..." : title;
-  };
   return (
     <>
       <div className="p-4 transition-shadow duration-300 bg-white border border-gray-200 rounded-lg shadow-md hover:shadow-lg">
@@ -30,7 +23,10 @@ export const NoteCard = ({ title, content, id }) => {
           <Link to={`/${id}`}>
             <h1
               className="text-lg font-semibold text-gray-800 cursor-pointer"
-              title={title.length > 30 ? title : ""}
+              title={
+                title.length > 30 &&
+                (title.length > 50 ? title.substring(0, 50) + "..." : title)
+              }
             >
               {clipTitle(title, "cardTitle")}
             </h1>
