@@ -1,0 +1,14 @@
+1. Add facility to mark a todo note as completed
+2. Add uuidv4 for auto generating the ids of the notes
+Make the Note Page nice looking. 
+Add category selection option.
+Try to add drag and drop somewhere.
+3. Add react-toastify to the application
+4. Implement the new note function on home page
+5. Implement the edit note function in the 
+6. Add a search functionality that allows user to search for notes by the text present inside the notes
+7. Make the application reactive
+
+
+Todo today:
+Refactor code and put it into proper folder structure
