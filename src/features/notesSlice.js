@@ -5,7 +5,7 @@ const notesSlice = createSlice({
   initialState: [
     {
       id: "ceab1009-d5fd-4869-886d-d701a235e68d",
-      title: "Finish reading 'Atomic Habits' by James Clear.",
+      title: "Finish reading 'Atomic Habits' by James Clear",
       content: "Complete the last chapter and take notes on key points.",
       cat: "personal",
       completed: true,

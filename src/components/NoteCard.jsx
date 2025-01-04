@@ -30,7 +30,10 @@ export const NoteCard = ({ title, content, id }) => {
           <Link to={`/${id}`}>
             <h1
               className="text-lg font-semibold text-gray-800 cursor-pointer"
-              title={title.length > 30 ? title : ""}
+              title={
+                title.length > 30 &&
+                (title.length > 50 ? title.substring(0, 50) + "..." : title)
+              }
             >
               {clipTitle(title, "cardTitle")}
             </h1>
