@@ -49,9 +49,15 @@ export const NotePage = () => {
             <div className="flex gap-4">
               <button
                 className="text-green-600 hover:text-green-700"
-                title="Mark as completed"
+                title={
+                  !note.completed ? "Mark as completed" : "Mark as incomplete"
+                }
               >
-                <CircleCheck size={32} />
+                {!note.completed ? (
+                  <CircleCheck size={32} />
+                ) : (
+                  <CircleX size={32} />
+                )}
               </button>
 
               <button
