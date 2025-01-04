@@ -23,7 +23,7 @@ const Sidebar = () => {
           alt="Logo"
           className="w-12 h-12 mb-2 rounded-full"
         />
-        <h1 className="text-xl font-bold">Categorical Todo</h1>
+        <h1 className="text-xl font-bold">Categories</h1>
       </div>
       <div className="flex justify-center mt-4 text-2xl text-white bg-stone-500">
         {totalNoteCount} {totalNoteCount === 1 ? "Note" : "Notes"}

@@ -68,7 +68,7 @@ export const NotePage = () => {
               </button>
               <button
                 className="text-red-600 btn hover:text-red-700"
-                title="Delete All Notes"
+                title="Delete Note"
                 onClick={() => setModalOpen(true)}
               >
                 <CircleX />
