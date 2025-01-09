@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router";
 import App from "../App.jsx";
-import { NotePage } from "../components/NotePage.jsx";
+import { NotePage } from "../components/note/NotePage.jsx";
 import { EmptyLayout } from "../layouts";
 
 const AppRoutes = () => {

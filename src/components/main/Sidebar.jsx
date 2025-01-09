@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { setCategory } from "../features/categorySlice";
+import { setCategory } from "../../features/categorySlice";
 
 const Sidebar = () => {
   const dispatch = useDispatch();

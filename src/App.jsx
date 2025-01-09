@@ -1,6 +1,6 @@
-import { Header } from "./components/Header";
-import { NoteBody } from "./components/NoteBody";
-import Sidebar from "./components/Sidebar";
+import { Header } from "./components/main/Header.jsx";
+import { NoteBody } from "./components/note/NoteBody.jsx";
+import Sidebar from "./components/main/Sidebar.jsx";
 
 function App() {
   return (

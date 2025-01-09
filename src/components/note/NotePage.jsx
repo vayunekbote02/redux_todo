@@ -8,9 +8,9 @@ import {
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink, useNavigate, useParams } from "react-router";
-import { ConfirmationModal } from "./ConfirmationModal";
-import { deleteNote } from "../features/notesSlice";
-import { clipTitle } from "../common_functions";
+import { ConfirmationModal } from "../modal/ConfirmationModal";
+import { deleteNote } from "../../features/notesSlice";
+import { clipTitle } from "../../common_functions";
 
 export const NotePage = () => {
   const { id } = useParams();
