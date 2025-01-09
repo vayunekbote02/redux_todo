@@ -1,12 +1,12 @@
 import { useDispatch, useSelector } from "react-redux";
-import { setCategory } from "../../features/categorySlice";
+import { setCategory } from "../../features/notesSlice";
 
 const Sidebar = () => {
   const dispatch = useDispatch();
-  const selectedCategory = useSelector((state) => state.category.category);
+  const selectedCategory = useSelector((state) => state.notes.selectedCategory);
   const totalNoteCount = useSelector(
     (state) =>
-      state.notes.filter(
+      state.notes.filteredNotes.filter(
         (note) => note.cat === selectedCategory || selectedCategory === "all"
       ).length
   );

@@ -1,16 +1,18 @@
 import { CirclePlus, CircleX, NotebookPen } from "lucide-react";
 import { SearchBar } from "./SearchBar";
-import { useDispatch } from "react-redux";
-import { deleteAllNotes } from "../../features/notesSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { deleteAllNotesOfSelectedCategory } from "../../features/notesSlice";
 import { ConfirmationModal } from "../modal/ConfirmationModal.jsx";
 import { useState } from "react";
+import { capitalizeFirstLetter } from "../../common_functions/index.js";
 
 export const Header = () => {
   const dispatch = useDispatch();
   const [modalOpen, setModalOpen] = useState(false);
+  const selectedCategory = useSelector((state) => state.notes.selectedCategory);
 
   const handleDeleteAllNotes = () => {
-    dispatch(deleteAllNotes());
+    dispatch(deleteAllNotesOfSelectedCategory(selectedCategory));
     setModalOpen(false);
   };
   return (
@@ -48,7 +50,11 @@ export const Header = () => {
           isOpen={modalOpen}
           onClose={() => setModalOpen(false)}
           onConfirm={handleDeleteAllNotes}
-          message={"all notes"}
+          message={
+            selectedCategory === "all"
+              ? "all notes"
+              : "your " + capitalizeFirstLetter(selectedCategory) + " notes"
+          }
         />
       )}
     </>

@@ -5,11 +5,11 @@ import {
   CircleX,
   Edit,
 } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink, useNavigate, useParams } from "react-router";
 import { ConfirmationModal } from "../modal/ConfirmationModal";
-import { deleteNote } from "../../features/notesSlice";
+import { deleteNote, resetNotes } from "../../features/notesSlice";
 import { clipTitle } from "../../common_functions";
 
 export const NotePage = () => {
@@ -17,7 +17,7 @@ export const NotePage = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const note = useSelector((state) =>
-    state.notes.find((notes) => notes.id === id)
+    state.notes.filteredNotes.find((notes) => notes.id === id)
   );
   const [modalOpen, setModalOpen] = useState(false);
 
@@ -26,6 +26,10 @@ export const NotePage = () => {
     setModalOpen(false);
     navigate("/");
   };
+
+  useEffect(() => {
+    dispatch(resetNotes());
+  }, []);
 
   return (
     <>
