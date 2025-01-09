@@ -1,8 +1,8 @@
 import { CirclePlus, CircleX, NotebookPen } from "lucide-react";
 import { SearchBar } from "./SearchBar";
 import { useDispatch } from "react-redux";
-import { deleteAllNotes } from "../features/notesSlice";
-import { ConfirmationModal } from "./ConfirmationModal";
+import { deleteAllNotes } from "../../features/notesSlice";
+import { ConfirmationModal } from "../modal/ConfirmationModal.jsx";
 import { useState } from "react";
 
 export const Header = () => {

@@ -1,10 +1,10 @@
 import { Trash, Edit } from "lucide-react"; // Importing icons from lucide-react
-import { deleteNote } from "../features/notesSlice";
+import { deleteNote } from "../../features/notesSlice";
 import { useDispatch } from "react-redux";
-import { ConfirmationModal } from "./ConfirmationModal";
+import { ConfirmationModal } from "../modal/ConfirmationModal";
 import { useState } from "react";
 import { Link } from "react-router";
-import { clipTitle } from "../common_functions";
+import { clipTitle } from "../../common_functions";
 
 export const NoteCard = ({ title, content, id }) => {
   const dispatch = useDispatch();
