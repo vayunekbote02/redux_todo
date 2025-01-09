@@ -14,3 +14,6 @@ give users multiple ways to view the notes (list, grid etc)
 
 Todo today:
 Refactor code and put it into proper folder structure
+
+For this branch:
+Currently, the category selection in the sidebar has been hardcoded. Make it such that if more categories are added, then it will automatically reflect on the Sidebar.
